@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis History</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Text</th>
+                <th>Sentiment</th>
+                <th>Confidence</th>
+                <th>Timestamp</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result[0] }}</td>
+                <td>{{ result[1] }}</td>
+                <td>{{ result[2] }}</td>
+                <td>{{ result[3]|round(4) }}</td>
+                <td>{{ result[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</body>
+</html> {% endcomment %} {% endcomment %}
+
+
